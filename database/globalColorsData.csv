@@ -1,14 +1,24 @@
 continent,continentCode,country,countryCode,primaryHEX,primaryRGB,primaryHSL,secondaryHEX,secondaryRGB,secondaryHSL,secondaryNotes
 Africa,AF,Algeria,DZA,#006230/#d30731/#fff,"rgb(0,98,48)/rgb(211,7,49)/rgb(255,255,255)","hsl(149,100%,19%)/hsl(348,94%,43%)/hsl(0,0%,100%)",,,,
-Antarctica,AN,Australian Antarctic Claim,ATAAUS,#001C69/#fff,"rgb(0,28,105)/rgb(255,255,255)","hsl(224,100%,21%)/hsl(0,0%,100%)",#92D4F7/#fff,"rgb(146,212,247)/rgb(255,255,255)","hsl(201,86%,77%)/hsl(0,0%,100%)",Colors from the unofficially proposed flag for the territory.
+Africa,AF,Angola,AGO,#cd022b/#000/#FC0,"rgb(205,2,43)/rgb(0,0,0)/rgb(255,204,0)","hsl(348,98%,41%)/hsl(0,0%,0%)/hsl(48,100%,50%)",,,,
+Africa,AF,Benin,BEN,#008651/#fdd116/#e7112d,"rgb(0,134,81)/rgb(253,209,22)/rgb(231,17,45)","hsl(156,100%,26%)/hsl(49,98%,54%)/hsl(352,86%,49%)",,,,
+Africa,AF,Botswana,BWA,#76a8db/#000/#fcfcfc,"rgb(118,168,291)/rgb(0,0,0)/rgb(252,252,252)","hsl(210,58%,66%)/hsl(0,0%,0%)/hsl(0,0%,99%)",,,,
+Africa,AF,Burkina Faso,BFA,#ef2b2d/#009e49/#fed116,"rgb(239,43,45)/rgb(0,158,73)/rgb(254,209,22)","hsl(359,86%,55%)/hsl(148,100%,31%)/hsl(48,99%,54%)",,,,
+Africa,AF,Burundi,BDI,#cf0921/#fff/#18b737,"rgb(207,9,33)/rgb(255,255,255)/rgb(24,183,55)","hsl(353,92%,42%)/hsl(0,0%,100%)/hsl(132,77%,41%)",,,,
+Africa,AF,Cameroon,CMR,#007a5e/#ce1126/#fcd116,"rgb(0,122,94)/rgb(206,17,38)/rgb(252,209,22)","hsl(166,100%,24%)/hsl(353,85%,44%)/hsl(49,97%,54%)",,,,
+Africa,AF,Cape Verde,CPV,#013893/#fff/#ce1127/#ffc900,"rgb(1,56,147)/rgb(255,255,255)/rgb(206,17,39)/rgb(255,201,0)","hsl(217,99%,29%)/hsl(0,0%,100%)/hsl(353,85%,44%)/hsl(47,100%,50%)",,,,
+Africa,AF,Central African Republic,CAF,#08399c/#fff/#319400/#ffde00/#ef2900,"rgb(8,57,156)/rgb(255,255,255)/rgb(49,148,0)/rgb(255,222,0)/rgb(239,41,0)","hsl(220,90%,32%)/hsl(0,0%,100%)/hsl(100,100%,29%)/hsl(52,100%,50%)/hsl(10,100%,47%)",,,,
+Africa,AF,Chad,TCD,#002b7f/#fcd116/#ce1126,"rgb(0,43,127)/rgb(252,209,22)/rgb(206,17,38)","hsl(220,100%,25%)/hsl(49,97%,54%)/hsl(353,85%,44%)",,,,
+Africa,AF,Comoros,COM,#ffc718/#fff/#cf0921/#3775c5/3a8f30,"rgb(255,199,24)/rgb(255,255,255)/rgb(207,9,33)/rgb(55,117,197)/rgb(58,143,48)","hsl(45,100%,55%)/hsl(0,0%,100%)/hsl(353,92%,42%)/hsl(214,56%,49%)/hsl(114,50%,37%)",,,,
+Antarctica,AN,Australian Antarctic Claim,ATAAUS,#001C69/#fff,"rgb(0,28,105)/rgb(255,255,255)","hsl(224,100%,21%)/hsl(0,0%,100%)",#92D4F7/#fff,"rgb(146,212,247)/rgb(255,255,255)","hsl(201,86%,77%)/hsl(0,0%,100%)",Colorsfromtheunofficiallyproposedflagfortheterritory.
 Antarctica,AN,Argentinian Antarctic Claim,ATAARG,#fd9730/#1983dd/#fff,"rgb(253,151,48)/rgb(25,131,221)/rgb(255,255,255)","hsl(30,98%,59%)/hsl(208,80%,48%)/hsl(0,0%,100%)",,,,
-Antarctica,AN,Chilean Antarctic Claim,ATACHL,#00c/#fdcb00/#fff,"rgb(0,0,204/rgb(253,203,0)/rgb(255,255,255)","hsl(240,100%,40%)/hsl(48,100%,50%)/hsl(0,0%,100%)",,,,
+Antarctica,AN,Chilean AntarcticClaim,ATACHL,#00c/#fdcb00/#fff,"rgb(0,0,204/rgb(253,203,0)/rgb(255,255,255)","hsl(240,100%,40%)/hsl(48,100%,50%)/hsl(0,0%,100%)",,,,
 Antarctica,AN,French Antarctic Claim,ATAFRA,#001e96/#fff,"rgb(0,30,150)/rgb(255,255,255)","hsl(228,100%,29%)/hsl(0,0%,100%)",,,,
-Antarctica,AN,New Zealands Antarctic Claim,ATANZL,#001c69/#c9072a/#fff,"rgb(0,28,105)/rgb(201,7,42)/rgb(255,255,255)","hsl(224,100%,21%)/hsl(349,93%,41%)/hsl(0,0%,100%)",#6699E5/#fff/#CE142B,"rgb(102,153,229)/rgb(255,255,255)/rgb(206,20,43)","hsl(216,71%,65%)/hsl(0,0%,100%)/hsl(353,82%,44%)",Colors from the unofficial flag of the Ross Dependancy.
+Antarctica,AN,NewZealands Antarctic Claim,ATANZL,#001c69/#c9072a/#fff,"rgb(0,28,105)/rgb(201,7,42)/rgb(255,255,255)","hsl(224,100%,21%)/hsl(349,93%,41%)/hsl(0,0%,100%)",#6699E5/#fff/#CE142B,"rgb(102,153,229)/rgb(255,255,255)/rgb(206,20,43)","hsl(216,71%,65%)/hsl(0,0%,100%)/hsl(353,82%,44%)",ColorsfromtheunofficialflagoftheRossDependancy.
 Antarctica,AN,Norwegian Antarctic Claim,ATANOR,#f02729/#fff/#002468,"rgb(240,39,41)/rgb(255,255,255)/rgb(0,36,104)","hsl(359,87%,55%)/hsl(0,0%,100%)/hsl(219,100%,20%)",,,,
 Antarctica,AN,British Antarctic Claim,ATAGBR,#fff,"rgb(255,255,255)","hsl(0,0%,100%)",,,,
-Asia,AS,Afghanistan,AFG,#000/#be0000/#090/#fff,"rgb(0,0,0)/rgb(190,0,0)/rgb(0,153,0)/rgb(255,255,255)","hsl(0,0%,0%)/hsl(0,100%,37%)/hsl(120,100%,30%)/hsl(0,0%,100%)",#035AB8,"rgb(3,90,184)","hsl(211,97%,37%)",Color used for the Afghanistan national cricket team.
+Asia,AS,Afghanistan,AFG,#000/#be0000/#090/#fff,"rgb(0,0,0)/rgb(190,0,0)/rgb(0,153,0)/rgb(255,255,255)","hsl(0,0%,0%)/hsl(0,100%,37%)/hsl(120,100%,30%)/hsl(0,0%,100%)",#035AB8,"rgb(3,90,184)","hsl(211,97%,37%)",ColorusedfortheAfghanistannationalcricketteam.
 Europe,EU,Albania,ALB,#e41e20/#000,"rgb(228,30,32)/rgb(0,0,0)","hsl(359,79%,51%)/hsl(0,0%,0%)",,,,
-North America,NA,Anguilla,AIA,#ff9900/#00ccff/#fff,"rgb(255,153,0)/rgb(0,204,0)/rgb(255,255,255)","hsl(36,100%,50%)/hsl(192,100%,50%)/hsl(0,0%,100%)",,,,
+NorthAmerica,NA,Anguilla,AIA,#ff9900/#00ccff/#fff,"rgb(255,153,0)/rgb(0,204,0)/rgb(255,255,255)","hsl(36,100%,50%)/hsl(192,100%,50%)/hsl(0,0%,100%)",,,,
 Oceania,OC,American Samoa,ASM,#006/#be071c/#fff,"rgb(0,0,102)/rgb(190,7,28)/rgb(255,255,255)","hsl(240,100%,20%)/hsl(353,93%,39%)/hsl(0,0%,100%)",,,,
-South America,SA,Argentina,ARG,#5eacff/#fff/#fac519,"rgb(94,172,255)/rgb(255,255,255)/rgb(250,197,25)","hsl(211,100%,68%)/hsl(0,0%,100%)/hsl(46,96%,54%)",#006A93/#000,"rgb(0,106,147)/rgb(0,0,0)","hsl(197,100%,29%)/hsl(0,0%,0%)",Colors used in sports.
+SouthAmerica,SA,Argentina,ARG,#5eacff/#fff/#fac519,"rgb(94,172,255)/rgb(255,255,255)/rgb(250,197,25)","hsl(211,100%,68%)/hsl(0,0%,100%)/hsl(46,96%,54%)",#006A93/#000,"rgb(0,106,147)/rgb(0,0,0)","hsl(197,100%,29%)/hsl(0,0%,0%)",Colorsusedinsports.
