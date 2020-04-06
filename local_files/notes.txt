@@ -1,0 +1,24 @@
+Queries
+
+US states
+UK countries
+Territories
+Former countries?
+
+Stack
+
+Jest w/ supertest
+Styrker
+Travis CI
+Gulp
+Node backend
+HTML5 frontend
+eslint
+babel
+browserslist
+
+Secondary Colors
+
+Can include sports / unofficial colors
+
+Antarctica codes - Continent-ClaimCountry
