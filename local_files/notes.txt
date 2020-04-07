@@ -7,20 +7,27 @@ Queries
 
 Stack
 
-    Jest w/ supertest
-    Styrker
-    Travis CI
-    Gulp
-    Node backend
-    HTML5 frontend
-    eslint
-    babel
-    browserslist
-
-Secondary Colors
-
-    Can include sports / unofficial colors
+    Jest w/ supertest ❌
+    Styrker ❌
+    Travis CI ❌
+    Gulp ✔️
+        gulp-postcss
+            autoprefixer
+            postcss-sorting
+        gulp-plumber
+    browserslist (for css) ✔️
+    Node backend ❌
+    EJS frontend ❌
+    eslint ✔️
 
 Antarctica codes
 
     Continent-ClaimCountry
+
+EJS
+
+    Server a 404 page.
+
+README
+
+    Explain structure to show how to access a specific country or how to loop through them via Object.values(). Allows best of both worlds.
