@@ -1,11 +1,11 @@
 const sqlite3 = require('sqlite3').verbose()
 
-const openDB = () => {
-    const db = new sqlite3.Database('./database/globalColors.db', sqlite3.OPEN_READONLY, (err) => {
+const openDB = (path) => {
+    const db = new sqlite3.Database(path, sqlite3.OPEN_READONLY, (err) => {
         if (err) {
-            return console.error(err.message)
+            // console.error(err.message)
+            return err
         }
-        console.log('Connected to the database with SQlite3.')
     })
     return db
 }
@@ -15,7 +15,6 @@ const closeDB = (db) => {
         if (err) {
             return console.error(err.message)
         }
-        console.log('Closed the database connection.')
     })
 }
 

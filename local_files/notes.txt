@@ -11,14 +11,11 @@ Stack
     Styrker ❌
     Travis CI ❌
     Gulp ✔️
-        gulp-postcss
-            autoprefixer
-            postcss-sorting
-        gulp-plumber
     browserslist (for css) ✔️
     Node backend ❌
     EJS frontend ❌
     eslint ✔️
+    dotenv for DB location ✔️
 
 Antarctica codes
 

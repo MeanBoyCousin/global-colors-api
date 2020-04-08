@@ -5,7 +5,7 @@ const sqlQueries = require('../helpers/sqlQueryBuilder')
 
 // Continent endpoint.
 router.get('/:continentCode', (req, res, next) => {
-    const db = database.open()
+    const db = database.open(process.env.DB_PATH)
 
     // Move to countries endpoint.
     if (req.params.continentCode.length > 2) {

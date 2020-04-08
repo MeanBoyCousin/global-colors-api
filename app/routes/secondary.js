@@ -5,7 +5,7 @@ const sqlQueries = require('../helpers/sqlQueryBuilder')
 
 // Secondary colors endpoint. Only returns countries that actually have a secondary for a smaller response.
 router.get('/', (req, res) => {
-    const db = database.open()
+    const db = database.open(process.env.DB_PATH)
 
     // Build sql query string.
     const sql = `SELECT continent, continentCode, country, countryCode, ${sqlQueries.colorSetTypeSecondaryOnly(req)} ${sqlQueries.secondaryNotes(req)} FROM globalColors ${sqlQueries.continentsCountries(req)};`

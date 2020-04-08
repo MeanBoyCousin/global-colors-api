@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+require('dotenv').config()
 // Routes.
 const index = require('./routes/index')
 const all = require('./routes/all')
@@ -34,5 +35,4 @@ app.get('*', (req, res) => {
     res.render('404.ejs')
 })
 
-app.listen(3000)
-console.log('Listening on port 3000!')
+module.exports = app

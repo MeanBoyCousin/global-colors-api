@@ -5,7 +5,7 @@ const sqlQueries = require('../helpers/sqlQueryBuilder')
 
 // Country endpoint.
 router.get('/:countryCode', (req, res) => {
-    const db = database.open()
+    const db = database.open(process.env.DB_PATH)
 
     // Build sql query string.
     const sql = `SELECT country, countryCode, ${sqlQueries.colorSetType(req)} ${sqlQueries.secondaryNotes(req)} FROM globalColors WHERE countryCode = '${req.params.countryCode}';`

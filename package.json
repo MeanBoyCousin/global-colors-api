@@ -5,7 +5,8 @@
     "env": {
       "commonjs": true,
       "es6": true,
-      "node": true
+      "node": true,
+      "jest": true
     },
     "extends": [
       "standard"
@@ -36,8 +37,9 @@
   "description": "An API to access associated color schemes from countries around the world.",
   "main": "ccapi.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp"
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "start": "nodemon app/listen.js"
   },
   "repository": {
     "type": "git",
@@ -56,18 +58,16 @@
   },
   "homepage": "https://github.com/MeanBoyCousin/global-colors-api#readme",
   "dependencies": {
-    "autoprefixer": "^9.7.6",
     "connect-timeout": "^1.9.0",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "ejs": "^3.0.2",
     "express": "^4.17.1",
     "express-prettify": "^0.1.1",
-    "gulp-plumber": "^1.2.1",
-    "gulp-postcss": "^8.0.0",
-    "postcss-sorting": "^5.0.1",
     "sqlite3": "^4.1.1"
   },
   "devDependencies": {
+    "autoprefixer": "^9.7.6",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.20.2",
@@ -75,6 +75,12 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "gulp": "^4.0.2",
-    "gulp-eslint": "^6.0.0"
+    "gulp-eslint": "^6.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "jest": "^25.2.7",
+    "jest-json-schema": "^2.1.0",
+    "postcss-sorting": "^5.0.1",
+    "supertest": "^4.0.2"
   }
 }
