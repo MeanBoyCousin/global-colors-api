@@ -35,4 +35,5 @@ app.get('*', (req, res) => {
     res.render('404.ejs')
 })
 
-module.exports = app
+app.listen(3000)
+console.log('Listening on port 3000!')

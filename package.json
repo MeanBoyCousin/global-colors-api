@@ -5,8 +5,7 @@
     "env": {
       "commonjs": true,
       "es6": true,
-      "node": true,
-      "jest": true
+      "node": true
     },
     "extends": [
       "standard"
@@ -37,9 +36,8 @@
   "description": "An API to access associated color schemes from countries around the world.",
   "main": "ccapi.js",
   "scripts": {
-    "test": "jest",
-    "coverage": "jest --coverage",
-    "start": "nodemon app/listen.js"
+    "test": "",
+    "start": "nodemon app/gcapi.js"
   },
   "repository": {
     "type": "git",
@@ -78,9 +76,6 @@
     "gulp-eslint": "^6.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
-    "jest": "^25.2.7",
-    "jest-json-schema": "^2.1.0",
-    "postcss-sorting": "^5.0.1",
-    "supertest": "^4.0.2"
+    "postcss-sorting": "^5.0.1"
   }
 }

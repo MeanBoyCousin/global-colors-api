@@ -28,20 +28,20 @@ router.get('/', (req, res) => {
                 countryName: row.country,
                 countryCode: row.countryCode,
                 primary: {
-                    hex: (row.primaryHEX !== undefined && row.primaryHEX !== '')
-                        ? row.primaryHEX.split('/') : undefined,
-                    rgb: (row.primaryRGB !== undefined && row.primaryRGB !== '')
-                        ? row.primaryRGB.split('/') : undefined,
-                    hsl: (row.primaryHSL !== undefined && row.primaryHSL !== '')
-                        ? row.primaryHSL.split('/') : undefined
+                    hex: (row.primaryHEX !== undefined && row.primaryHEX !== '') ?
+                        row.primaryHEX.split('/') : undefined,
+                    rgb: (row.primaryRGB !== undefined && row.primaryRGB !== '') ?
+                        row.primaryRGB.split('/') : undefined,
+                    hsl: (row.primaryHSL !== undefined && row.primaryHSL !== '') ?
+                        row.primaryHSL.split('/') : undefined
                 },
                 secondary: {
-                    hex: (row.secondaryHEX !== undefined && row.secondaryHEX !== '')
-                        ? row.secondaryHEX.split('/') : undefined,
-                    rgb: (row.secondaryRGB !== undefined && row.secondaryRGB !== '')
-                        ? row.secondaryRGB.split('/') : undefined,
-                    hsl: (row.secondaryHSL !== undefined && row.secondaryHSL !== '')
-                        ? row.secondaryHSL.split('/') : undefined,
+                    hex: (row.secondaryHEX !== undefined && row.secondaryHEX !== '') ?
+                        row.secondaryHEX.split('/') : undefined,
+                    rgb: (row.secondaryRGB !== undefined && row.secondaryRGB !== '') ?
+                        row.secondaryRGB.split('/') : undefined,
+                    hsl: (row.secondaryHSL !== undefined && row.secondaryHSL !== '') ?
+                        row.secondaryHSL.split('/') : undefined,
                     notes: row.secondaryNotes
                 }
             }

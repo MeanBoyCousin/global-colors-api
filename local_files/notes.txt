@@ -7,8 +7,7 @@ Queries
 
 Stack
 
-    Jest w/ supertest ❌
-    Styrker ❌
+    Postman / Newman ❌
     Travis CI ❌
     Gulp ✔️
     browserslist (for css) ✔️
@@ -24,6 +23,7 @@ Antarctica codes
 EJS
 
     Server a 404 page.
+    Server a home page / read me.
 
 README
 
