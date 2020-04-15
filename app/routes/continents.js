@@ -39,7 +39,9 @@ router.get('/:continentCode', (req, res, next) => {
                     rgb: (row.primaryRGB !== undefined && row.primaryRGB !== '')
                         ? row.primaryRGB.split('/') : undefined,
                     hsl: (row.primaryHSL !== undefined && row.primaryHSL !== '')
-                        ? row.primaryHSL.split('/') : undefined
+                        ? row.primaryHSL.split('/') : undefined,
+                    css: (row.primaryCSS !== undefined && row.primaryCSS !== '')
+                        ? row.primaryCSS.split('/') : undefined
                 },
                 secondary: {
                     hex: (row.secondaryHEX !== undefined && row.secondaryHEX !== '')
@@ -48,12 +50,19 @@ router.get('/:continentCode', (req, res, next) => {
                         ? row.secondaryRGB.split('/') : undefined,
                     hsl: (row.secondaryHSL !== undefined && row.secondaryHSL !== '')
                         ? row.secondaryHSL.split('/') : undefined,
+                    css: (row.secondaryCSS !== undefined && row.secondaryCSS !== '')
+                        ? row.secondaryCSS.split('/') : undefined,
                     notes: row.secondaryNotes
                 }
             }
 
+            // If no data for a color set, set that set equal to an empty string.
             if (Object.values(result.countries[row.country].primary).join('') === '') result.countries[row.country].primary = ''
             if (Object.values(result.countries[row.country].secondary).join('') === '') result.countries[row.country].secondary = ''
+
+            // If colorset query is set, delete the objects for the other color set.
+            if (req.query.colorset === 'primary') delete result.countries[row.country].secondary
+            if (req.query.colorset === 'secondary') delete result.countries[row.country].primary
         })
 
         Object.keys(result).length === 0

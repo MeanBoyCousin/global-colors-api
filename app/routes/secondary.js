@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     const db = database.open(process.env.DB_PATH)
 
     // Build sql query string.
-    const sql = `SELECT continent, continentCode, country, countryCode, ${sqlQueries.colorSetTypeSecondaryOnly(req)} ${sqlQueries.secondaryNotes(req)} FROM globalColors ${sqlQueries.continentsCountries(req)};`
+    const sql = `SELECT continent, continentCode, country, countryCode, ${sqlQueries.colorSetTypeSecondaryOnly(req)}, secondaryNotes FROM globalColors ${sqlQueries.continentsCountries(req)};`
 
     db.all(sql, (err, rows) => {
         if (err) throw err
@@ -34,10 +34,13 @@ router.get('/', (req, res) => {
                         ? row.secondaryRGB.split('/') : undefined,
                     hsl: (row.secondaryHSL !== undefined && row.secondaryHSL !== '')
                         ? row.secondaryHSL.split('/') : undefined,
+                    css: (row.secondaryCSS !== undefined && row.secondaryCSS !== '')
+                        ? row.secondaryCSS.split('/') : undefined,
                     notes: row.secondaryNotes
                 }
             }
 
+            // If no secondary data, delete the country.
             if (Object.values(result[row.continent].countries[row.country].secondary).join('') === '') delete result[row.continent].countries[row.country]
         })
 

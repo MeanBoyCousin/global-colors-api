@@ -2,11 +2,11 @@ const colorSetType = (req) => {
     if (req.query.colorset !== undefined && req.query.colortypes !== undefined) {
         return req.query.colortypes.toUpperCase().split(',').map(type => req.query.colorset + type).join(', ')
     } else if (req.query.colorset !== undefined && req.query.colortypes === undefined) {
-        return `${req.query.colorset}HEX, ${req.query.colorset}RGB, ${req.query.colorset}HSL`
+        return `${req.query.colorset}HEX, ${req.query.colorset}RGB, ${req.query.colorset}HSL, ${req.query.colorset}CSS`
     } else if (req.query.colorset === undefined && req.query.colortypes !== undefined) {
         return req.query.colortypes.toUpperCase().split(',').map(type => `primary${type}, secondary${type}`).join(', ')
     } else {
-        return 'primaryHex, primaryRGB, primaryHSL, secondaryHEX, secondaryRGB, secondaryHSL'
+        return 'primaryHex, primaryRGB, primaryHSL, primaryCSS, secondaryHEX, secondaryRGB, secondaryHSL, secondaryCSS'
     }
 }
 
@@ -43,7 +43,7 @@ const colorSetTypeSecondaryOnly = (req) => {
     if (req.query.colortypes !== undefined) {
         return req.query.colortypes.toUpperCase().split(',').map(type => `secondary${type}`).join(', ')
     } else {
-        return 'secondaryHEX, secondaryRGB, secondaryHSL'
+        return 'secondaryHEX, secondaryRGB, secondaryHSL, secondaryCSS'
     }
 }
 

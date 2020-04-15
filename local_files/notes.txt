@@ -1,9 +1,10 @@
-Queries
+﻿Queries
 
     US states
     UK countries
     Territories
     Former countries?
+    Black & White remover
 
 Stack
 
@@ -19,6 +20,14 @@ Stack
 Antarctica codes
 
     Continent-ClaimCountry
+
+Additional Countries w/ No Code
+
+    England - ENG
+    Northern Ireland - NIR
+    Scotland - SCO
+    Tibet - TIB
+    Wales - WAL
 
 EJS
 
