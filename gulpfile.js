@@ -15,24 +15,6 @@ gulp.task('lint-self', () => {
         .pipe(gulp.dest('./'))
 })
 
-gulp.task('lint-tests', () => {
-    const helperTests = gulp.src('tests/helpers/*.js')
-        .pipe(eslint({
-            fix: true
-        }))
-        .pipe(eslint.format())
-        .pipe(gulp.dest('tests/helpers'))
-
-    const routeTests = gulp.src('tests/routes/*.js')
-        .pipe(eslint({
-            fix: true
-        }))
-        .pipe(eslint.format())
-        .pipe(gulp.dest('tests/routes'))
-
-    return (helperTests, routeTests)
-})
-
 gulp.task('lint', () => {
     const helpers = gulp.src('app/helpers/*.js')
         .pipe(eslint({
@@ -67,4 +49,4 @@ gulp.task('styles', function () {
         .pipe(gulp.dest('app/assets'))
 })
 
-gulp.task('default', gulp.series('lint-self', 'lint-tests', 'lint', 'styles'))
+gulp.task('default', gulp.series('lint-self', 'lint', 'styles'))

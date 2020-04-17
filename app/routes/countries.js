@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const database = require('../helpers/databaseAccess')
 const sqlQueries = require('../helpers/sqlQueryBuilder')
+const nbw = require('../helpers/nbw')
 
 // Country endpoint.
 router.get('/:countryCode', (req, res) => {
@@ -20,25 +21,24 @@ router.get('/:countryCode', (req, res) => {
                 countryName: row.country,
                 countryCode: row.countryCode,
                 primary: {
-                    hex: (row.primaryHEX !== undefined && row.primaryHEX !== '')
-                        ? row.primaryHEX.split('/') : undefined,
-                    rgb: (row.primaryRGB !== undefined && row.primaryRGB !== '')
-                        ? row.primaryRGB.split('/') : undefined,
-                    hsl: (row.primaryHSL !== undefined && row.primaryHSL !== '')
-                        ? row.primaryHSL.split('/') : undefined,
-                    css: (row.primaryCSS !== undefined && row.primaryCSS !== '')
-                        ? row.primaryCSS.split('/') : undefined
+                    hex: (row.primaryHEX !== undefined && row.primaryHEX !== '') ?
+                        nbw(req, row.primaryHEX.split('/'), '#000000', '#ffffff') : undefined,
+                    rgb: (row.primaryRGB !== undefined && row.primaryRGB !== '') ?
+                        nbw(req, row.primaryRGB.split('/'), 'rgb(0,0,0)', 'rgb(255,255,255)') : undefined,
+                    hsl: (row.primaryHSL !== undefined && row.primaryHSL !== '') ?
+                        nbw(req, row.primaryHSL.split('/'), 'hsl(0,0%,0%)', 'hsl(0,0%,100%)') : undefined,
+                    css: (row.primaryCSS !== undefined && row.primaryCSS !== '') ?
+                        nbw(req, row.primaryCSS.split('/'), 'black', 'white') : undefined
                 },
                 secondary: {
-                    hex: (row.secondaryHEX !== undefined && row.secondaryHEX !== '')
-                        ? row.secondaryHEX.split('/') : undefined,
-                    rgb: (row.secondaryRGB !== undefined && row.secondaryRGB !== '')
-                        ? row.secondaryRGB.split('/') : undefined,
-                    hsl: (row.secondaryHSL !== undefined && row.secondaryHSL !== '')
-                        ? row.secondaryHSL.split('/') : undefined,
-                    css: (row.secondaryCSS !== undefined && row.secondaryCSS !== '')
-                        ? row.secondaryCSS.split('/') : undefined,
-                    notes: row.secondaryNotes
+                    hex: (row.secondaryHEX !== undefined && row.secondaryHEX !== '') ?
+                        nbw(req, row.secondaryHEX.split('/'), '#000000', '#ffffff') : undefined,
+                    rgb: (row.secondaryRGB !== undefined && row.secondaryRGB !== '') ?
+                        nbw(req, row.secondaryRGB.split('/'), 'rgb(0,0,0)', 'rgb(255,255,255)') : undefined,
+                    hsl: (row.secondaryHSL !== undefined && row.secondaryHSL !== '') ?
+                        nbw(req, row.secondaryHSL.split('/'), 'hsl(0,0%,0%)', 'hsl(0,0%,100%)') : undefined,
+                    css: (row.secondaryCSS !== undefined && row.secondaryCSS !== '') ?
+                        nbw(req, row.secondaryCSS.split('/'), 'black', 'white') : undefined
                 }
             }
 
@@ -47,12 +47,12 @@ router.get('/:countryCode', (req, res) => {
             if (Object.values(result.secondary).join('') === '') result.secondary = ''
 
             // If colorset query is set, delete the objects for the other color set.
-            if (req.query.colorset === 'primary') delete result.secondary
-            if (req.query.colorset === 'secondary') delete result.primary
+            if (req.query.set === 'primary') delete result.secondary
+            if (req.query.set === 'secondary') delete result.primary
         })
 
-        Object.keys(result).length === 0
-            ? res.json({
+        Object.keys(result).length === 0 ?
+            res.json({
                 error: 'sorry, nothing matches your query.'
             }) : res.json(result)
     })

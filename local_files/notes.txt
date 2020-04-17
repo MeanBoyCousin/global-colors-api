@@ -1,10 +1,12 @@
 ﻿Queries
 
-    US states
-    UK countries
-    Territories
-    Former countries?
-    Black & White remover
+    prettify ✔️
+    types (hex,rgb,hsl,css) ✔️
+    set (primary,secondary) ✔️
+    continents (code(s)) ✔️
+    countries (code(s)) ✔️
+    colors (color(s)) ✔️
+    nbw ✔️
 
 Stack
 
@@ -37,3 +39,4 @@ EJS
 README
 
     Explain structure to show how to access a specific country or how to loop through them via Object.values(). Allows best of both worlds.
+    Countries doesn't have the colors query as no need to query for color sets in only one data set.

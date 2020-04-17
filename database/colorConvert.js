@@ -1,7 +1,7 @@
 const convert = require('color-convert')
 
 //Input hex string.
-const array = '0065be-ffffff'.trim().split('-');
+const array = 'ffffff-df0807-001c69-fff700'.trim().split('-');
 
 //Hex code output.
 const hex = array.map(hex => `#${hex}`).join('/');
