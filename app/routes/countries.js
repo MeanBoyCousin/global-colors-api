@@ -38,13 +38,14 @@ router.get('/:countryCode', (req, res) => {
                     hsl: (row.secondaryHSL !== undefined && row.secondaryHSL !== '') ?
                         nbw(req, row.secondaryHSL.split('/'), 'hsl(0,0%,0%)', 'hsl(0,0%,100%)') : undefined,
                     css: (row.secondaryCSS !== undefined && row.secondaryCSS !== '') ?
-                        nbw(req, row.secondaryCSS.split('/'), 'black', 'white') : undefined
+                        nbw(req, row.secondaryCSS.split('/'), 'black', 'white') : undefined,
+                    notes: row.secondaryNotes
                 }
             }
 
             // If no data for a color set, set that set equal to an empty string.
-            if (Object.values(result.primary).join('') === '') result.primary = ''
-            if (Object.values(result.secondary).join('') === '') result.secondary = ''
+            if (Object.values(result.primary).join('') === '' || Object.values(result.primary).slice(0, 4).join('') === '') result.primary = ''
+            if (Object.values(result.secondary).join('') === '' || Object.values(result.secondary).slice(0, 4).join('') === '') result.secondary = ''
 
             // If colorset query is set, delete the objects for the other color set.
             if (req.query.set === 'primary') delete result.secondary

@@ -52,13 +52,14 @@ router.get('/:continentCode', (req, res, next) => {
                     hsl: (row.secondaryHSL !== undefined && row.secondaryHSL !== '') ?
                         nbw(req, row.secondaryHSL.split('/'), 'hsl(0,0%,0%)', 'hsl(0,0%,100%)') : undefined,
                     css: (row.secondaryCSS !== undefined && row.secondaryCSS !== '') ?
-                        nbw(req, row.secondaryCSS.split('/'), 'black', 'white') : undefined
+                        nbw(req, row.secondaryCSS.split('/'), 'black', 'white') : undefined,
+                    notes: row.secondaryNotes
                 }
             }
 
             // If no data for a color set, set that set equal to an empty string.
-            if (Object.values(result.countries[row.country].primary).join('') === '') result.countries[row.country].primary = ''
-            if (Object.values(result.countries[row.country].secondary).join('') === '') result.countries[row.country].secondary = ''
+            if (Object.values(result.countries[row.country].primary).join('') === '' || Object.values(result.countries[row.country].primary).slice(0, 4).join('') === '') result.countries[row.country].primary = ''
+            if (Object.values(result.countries[row.country].secondary).join('') === '' || Object.values(result.countries[row.country].secondary).slice(0, 4).join('') === '') result.countries[row.country].secondary = ''
 
             // If colorset query is set, delete the objects for the other color set.
             if (req.query.set === 'primary') delete result.countries[row.country].secondary

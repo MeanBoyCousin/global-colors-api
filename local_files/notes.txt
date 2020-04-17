@@ -1,12 +1,12 @@
 ﻿Queries
 
-    prettify ✔️
-    types (hex,rgb,hsl,css) ✔️
-    set (primary,secondary) ✔️
+    colors (color(s)) ✔️
     continents (code(s)) ✔️
     countries (code(s)) ✔️
-    colors (color(s)) ✔️
     nbw ✔️
+    prettify ✔️
+    set (primary,secondary) ✔️
+    types (hex,rgb,hsl,css) ✔️
 
 Stack
 
@@ -14,29 +14,27 @@ Stack
     Travis CI ❌
     Gulp ✔️
     browserslist (for css) ✔️
-    Node backend ❌
-    EJS frontend ❌
+    Node backend ✔️
+    EJS frontend ✔️
     eslint ✔️
     dotenv for DB location ✔️
 
-Antarctica codes
-
-    Continent-ClaimCountry
-
-Additional Countries w/ No Code
+Additional Countries w/ No Code (* in docs)
 
     England - ENG
     Northern Ireland - NIR
     Scotland - SCO
     Tibet - TIB
     Wales - WAL
+    Antarctica codes
 
 EJS
 
-    Server a 404 page.
-    Server a home page / read me.
+    Serve a 404 page. ✔️
+    Serve a home page / read me. ✔️
 
 README
 
     Explain structure to show how to access a specific country or how to loop through them via Object.values(). Allows best of both worlds.
+    
     Countries doesn't have the colors query as no need to query for color sets in only one data set.

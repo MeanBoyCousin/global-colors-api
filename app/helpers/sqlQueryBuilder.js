@@ -34,7 +34,7 @@ const continentsCountriesAll = req => {
     } else if (continentsAll(req) !== undefined && countriesAll(req) === undefined) {
         return `WHERE ${continentsAll(req)}`
     } else if (continentsAll(req) !== undefined && countriesAll(req) !== undefined) {
-        return `WHERE ${countriesAll(req)} OR ${continentsAll(req)}`
+        return `WHERE (${countriesAll(req)} OR ${continentsAll(req)})`
     } else {
         return ''
     }

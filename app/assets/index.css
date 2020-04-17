@@ -1,7 +1,122 @@
 body {
+    display: -webkit-box;
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
     align-items: center;
+    -webkit-justify-content: center;
     justify-content: center;
-    height: 100px;
+    width: 90%;
+    margin: 2.5% 5%;
     font-family: monospace;
+    text-align: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+}
+
+h1 {
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    margin: 0;
+    margin-bottom: 1rem;
+    font-size: 1.15rem;
+}
+
+h4 {
+    margin: 0;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+p {
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+hr {
+    width: 100%;
+    margin: 0;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    border-top: rgb(223, 226, 229);
+}
+
+.code {
+    padding: .2rem .4rem;
+    background-color: rgba(27, 31, 35, 0.05);
+}
+
+
+.code-block {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    word-wrap: break-word;
+    background-color: rgb(246, 248, 250);
+}
+
+.get {
+    padding-right: .4rem;
+    color: rgb(215, 58, 73);
+}
+
+.endpoint-string {
+    color: rgb(0, 92, 197);
+}
+
+.param-table {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 1rem;
+    margin: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-box-pack: center;
+}
+
+table {
+    box-sizing: border-box;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: .5rem 2rem;
+    border: 1px solid rgb(223, 226, 229);
+}
+
+
+pre {
+    width: 100%;
+    overflow-x: auto;
+    color: rgb(3, 47, 98);
+}
+
+a {
+    color: black;
+    -webkit-transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+a:hover {
+    color: rgb(3, 47, 98);
 }

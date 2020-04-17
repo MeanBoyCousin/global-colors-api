@@ -31,18 +31,21 @@
     },
     "browserslist": [
         "and_chr >= 78",
-        "ios >= 12",
+        "and_uc >= 12.12",
+        "ios_saf >= 12.2",
         "samsung >= 10.1",
         "chrome >= 77",
         "edge >= 18",
         "firefox >= 70",
-        "safari >= 13"
+        "ie >= 11",
+        "safari >= 5.1"
     ],
     "description": "An API to access associated color schemes from countries around the world.",
     "main": "ccapi.js",
     "scripts": {
         "test": "",
-        "start": "nodemon app/gcapi.js"
+        "start": "nodemon app/gcapi.js",
+        "build": "gulp"
     },
     "repository": {
         "type": "git",

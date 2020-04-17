@@ -43,10 +43,17 @@ gulp.task('lint', () => {
 const sortTemplate = require('./css-sort-template.json')
 
 gulp.task('styles', function () {
-    return gulp.src('app/assets/index.css')
+    const index = gulp.src('app/assets/index.css')
         .pipe(plumber())
         .pipe(postcss([sort(sortTemplate), prefix()]))
         .pipe(gulp.dest('app/assets'))
+
+    const fourZeroFour = gulp.src('app/assets/404.css')
+        .pipe(plumber())
+        .pipe(postcss([sort(sortTemplate), prefix()]))
+        .pipe(gulp.dest('app/assets'))
+
+    return (index, fourZeroFour)
 })
 
 gulp.task('default', gulp.series('lint-self', 'lint', 'styles'))

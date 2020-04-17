@@ -9,7 +9,539 @@
 </head>
 
 <body>
-    <h1>Hello World</h1>
+
+    <h1>Welcome to the Global Colors API!</h1>
+
+    <hr>
+
+    <h4>Have you ever needed to quickly grab color information for any country around the world?</h4>
+
+    <h4>Perhaps you're trying to style a map or add appropriate color themes to a chart?</h4>
+
+    <h4>The global colors API has it all!</h4>
+
+    <hr>
+
+    <h2>API Reference</h2>
+
+    <p>All endpoints are located at <span class="code">http://localhost:3000/api/v1/</span></p>
+
+    <hr>
+
+    <h2>API Endpoints</h2>
+
+    <h3>All Endpoint</h3>
+
+    <div class="code-block">
+        <span class="get">GET</span><span class="endpoint-string">/v1/all</span>
+    </div>
+
+    <h4>Query String Parameters</h4>
+
+    <div class="param-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Query String Parameter</th>
+                    <th>Example</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                    <th>Accepts</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>colors</td>
+                    <td>/v1/all?colors=green,blue</td>
+                    <td>only return countries that use a certain color</td>
+                    <td>string (comma separated if a list)</td>
+                    <td>blue, brown, cyan, green, grey, orange, pink, purple, red, white, yellow</td>
+                </tr>
+                <tr>
+                    <td>continents (CC)</td>
+                    <td>/v1/all?continents=SA,NA</td>
+                    <td>only return countries within the specified continents</td>
+                    <td>string (comma separated if a list)</td>
+                    <td>AF, AN, AS, EU, NA, OC, SA</td>
+                </tr>
+                <tr>
+                    <td>countries (ISO Alpha-3)</td>
+                    <td>/v1/all?countries=USA,GBR,CHN</td>
+                    <td>only return specified countries</td>
+                    <td>string (comma separated if a list)</td>
+                    <td>any ISO Alpha-3 country code *</td>
+                </tr>
+                <tr>
+                    <td>nbw</td>
+                    <td>/v1/all?nbw</td>
+                    <td>removes all black and white colors from the returned data</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>prettify</td>
+                    <td>/v1/all?prettify</td>
+                    <td>returns the JSON in pretty print</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>set</td>
+                    <td>/v1/all?set=secondary</td>
+                    <td>only return primary or secondary colors</td>
+                    <td>string</td>
+                    <td>primary, secondary</td>
+                </tr>
+                <tr>
+                    <td>types</td>
+                    <td>/v1/all?set=hex,css</td>
+                    <td>only return colors in specified formats</td>
+                    <td>string (comma separated if a list)</td>
+                    <td>hex, rgb, hsl, css</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h4>Example Request</h4>
+
+    <div class="code-block">
+        <span class="get">GET</span><span class="endpoint-string">/v1/all?colors=yellow&continents=OC&nbw&types=hex,css&set=secondary</span>
+    </div>
+
+    <h4>Example Response</h4>
+
+    <div class="code-block">
+        <pre class="example">
+{
+    "Oceania": {
+        "continentName": "Oceania",
+        "continentCode": "OC",
+        "countries": {
+            "Cook Islands": {
+                "countryName": "Cook Islands",
+                "countryCode": "COK",
+                "secondary": {
+                    "hex": [ "#005a00", "#ffd700" ],
+                    "css": [ "darkgreen", "gold" ],
+                    "notes": "Colors from the previous flag."
+                }
+            },
+            "Tuvalu": {
+                "countryName": "Tuvalu",
+                "countryCode": "TUV",
+                "secondary": {
+                    "hex": [ "#00247d", "#fee014" ],
+                    "css": [ "midnightblue", "gold" ],
+                    "notes": "Colors used in the flag of the Govenor-General of Tuvalu."
+                }
+            }
+        }
+    }
+}
+        </pre>
+    </div>
+
+    <hr>
+
+    <h3>Secondary Endpoint</h3>
+
+    <div class="code-block">
+        <span class="get">GET</span><span class="endpoint-string">/v1/secondary</span>
+    </div>
+
+    <h4>Query String Parameters</h4>
+
+    <div class="param-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Query String Parameter</th>
+                    <th>Example</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                    <th>Accepts</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>colors</td>
+                    <td>/v1/all?colors=green,blue</td>
+                    <td>only return countries that use a certain color</td>
+                    <td>string (comma separated if a list)</td>
+                    <td>blue, brown, cyan, green, grey, orange, pink, purple, red, white, yellow</td>
+                </tr>
+                <tr>
+                    <td>continents (CC)</td>
+                    <td>/v1/all?continents=SA,NA</td>
+                    <td>only return countries within the specified continents</td>
+                    <td>string (comma separated if a list)</td>
+                    <td>AF, AN, AS, EU, NA, OC, SA</td>
+                </tr>
+                <tr>
+                    <td>countries (ISO Alpha-3)</td>
+                    <td>/v1/all?countries=USA,GBR,CHN</td>
+                    <td>only return specified countries</td>
+                    <td>string (comma separated if a list)</td>
+                    <td>any ISO Alpha-3 country code *</td>
+                </tr>
+                <tr>
+                    <td>nbw</td>
+                    <td>/v1/all?nbw</td>
+                    <td>removes all black and white colors from the returned data</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>prettify</td>
+                    <td>/v1/all?prettify</td>
+                    <td>returns the JSON in pretty print</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>types</td>
+                    <td>/v1/all?set=hex,css</td>
+                    <td>only return colors in specified formats</td>
+                    <td>string (comma separated if a list)</td>
+                    <td>hex, rgb, hsl, css</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h4>Example Request</h4>
+
+    <div class="code-block">
+        <span class="get">GET</span><span class="endpoint-string">/v1/secondary?colors=purple&countries=THA&nbw&types=rgb</span>
+    </div>
+
+    <h4>Example Response</h4>
+
+    <div class="code-block">
+        <pre class="example">
+{
+    "Asia": {
+        "continentName": "Asia",
+        "continentCode": "AS",
+        "countries": {
+            "Thailand": {
+                "countryName": "Thailand",
+                "countryCode": "THA",
+                "secondary": {
+                    "rgb": [ "rgb(42,127,255)", "rgb(188,130,207)", "rgb(255,224,0)" ],
+                    "notes": "Colors used in the royal flags of Thailand."
+                }
+            }
+        }
+    }
+}
+        </pre>
+    </div>
+
+    <hr>
+
+    <h3>Continents Endpoint</h3>
+
+    <div class="code-block">
+        <span class="get">GET</span><span class="endpoint-string">/v1/:continent-code</span>
+    </div>
+
+    <h4>Path Parameters</h4>
+
+    <div class="param-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Path Parameter</th>
+                    <th>Example</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                    <th>Accepts</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>continent-code</td>
+                    <td>/v1/EU</td>
+                    <td>only return countries within the specified continent</td>
+                    <td>string (CC)</td>
+                    <td>AF, AN, AS, EU, NA, OC, SA</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h4>Query String Parameters</h4>
+
+    <div class="param-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Query String Parameter</th>
+                    <th>Example</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                    <th>Accepts</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>colors</td>
+                    <td>/v1/all?colors=green,blue</td>
+                    <td>only return countries that use a certain color</td>
+                    <td>string (comma separated if a list)</td>
+                    <td>blue, brown, cyan, green, grey, orange, pink, purple, red, white, yellow</td>
+                </tr>
+                <tr>
+                    <td>countries (ISO Alpha-3)</td>
+                    <td>/v1/all?countries=BLR,MDA</td>
+                    <td>only return specified countries that are within the choosen continent</td>
+                    <td>string (comma separated if a list)</td>
+                    <td>any ISO Alpha-3 country code *</td>
+                </tr>
+                <tr>
+                    <td>nbw</td>
+                    <td>/v1/all?nbw</td>
+                    <td>removes all black and white colors from the returned data</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>prettify</td>
+                    <td>/v1/all?prettify</td>
+                    <td>returns the JSON in pretty print</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>set</td>
+                    <td>/v1/all?set=secondary</td>
+                    <td>only return primary or secondary colors</td>
+                    <td>string</td>
+                    <td>primary, secondary</td>
+                </tr>
+                <tr>
+                    <td>types</td>
+                    <td>/v1/all?set=hex,css</td>
+                    <td>only return colors in specified formats</td>
+                    <td>string (comma separated if a list)</td>
+                    <td>hex, rgb, hsl, css</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h4>Example Request</h4>
+
+    <div class="code-block">
+        <span class="get">GET</span><span class="endpoint-string">/v1/EU?countries=LTU,NLD&types=hsl,css&set=primary</span>
+    </div>
+
+    <h4>Example Response</h4>
+
+    <div class="code-block">
+        <pre class="example">
+{
+    "continentName": "Europe",
+    "continentCode": "EU",
+    "countries": {
+        "Lithuania": {
+        "countryName": "Lithuania",
+        "countryCode": "LTU",
+            "primary": {
+                "hsl": [ "hsl(44,98%,52%)", "hsl(157,100%,21%)", "hsl(358,69%,45%)" ],
+                "css": [ "orange", "darkslategray", "firebrick" ]
+            }
+        },
+        "Netherlands": {
+        "countryName": "Netherlands",
+        "countryCode": "NLD",
+            "primary": {
+                "hsl": [ "hsl(19,100%,50%)" ],
+                "css": [ "orangered" ]
+            }
+        }
+    }
+}
+        </pre>
+    </div>
+
+    <hr>
+
+    <h3>Countries Endpoint</h3>
+
+    <div class="code-block">
+        <span class="get">GET</span><span class="endpoint-string">/v1/:country-code</span>
+    </div>
+
+    <h4>Path Parameters</h4>
+
+    <div class="param-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Path Parameter</th>
+                    <th>Example</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                    <th>Accepts</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>country-code</td>
+                    <td>/v1/USA</td>
+                    <td>only return the specified country</td>
+                    <td>string (ISO Alpha-3)</td>
+                    <td>any ISO Alpha-3 country code *</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h4>Query String Parameters</h4>
+
+    <div class="param-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Query String Parameter</th>
+                    <th>Example</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                    <th>Accepts</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>nbw</td>
+                    <td>/v1/all?nbw</td>
+                    <td>removes all black and white colors from the returned data</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>prettify</td>
+                    <td>/v1/all?prettify</td>
+                    <td>returns the JSON in pretty print</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>set</td>
+                    <td>/v1/all?set=secondary</td>
+                    <td>only return primary or secondary colors</td>
+                    <td>string</td>
+                    <td>primary, secondary</td>
+                </tr>
+                <tr>
+                    <td>types</td>
+                    <td>/v1/all?set=hex,css</td>
+                    <td>only return colors in specified formats</td>
+                    <td>string (comma separated if a list)</td>
+                    <td>hex, rgb, hsl, css</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h4>Example Request</h4>
+
+    <div class="code-block">
+        <span class="get">GET</span><span class="endpoint-string">/v1/USA?nbw&types=hex</span>
+    </div>
+
+    <h4>Example Response</h4>
+
+    <div class="code-block">
+        <pre class="example">
+{
+    "countryName": "United States of America",
+    "countryCode": "USA",
+        "primary": {
+            "hex": [ "#b41d31", "#39386e" ]
+        },
+        "secondary": ""
+}
+        </pre>
+    </div>
+
+    <hr>
+
+    <h3>
+        <a href="https://github.com/MeanBoyCousin/global-colors-api" target="_blank">Enjoying this API? Why not head over to the GitHub repo and give us a star?</a>
+    </h3>
+
+    <hr>
+
+    <h4>References</h4>
+
+    <p>* Some additional ISO Alpha-3 style codes have been added to this API to represent countries that do not have official codes. These include the following.</p>
+
+    <div class="param-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Country Name</th>
+                    <th>Country Code</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>England</td>
+                    <td>ENG</td>
+                </tr>
+                <tr>
+                    <td>Northern Ireland</td>
+                    <td>NIR</td>
+                </tr>
+                <tr>
+                    <td>Scotland</td>
+                    <td>SCO</td>
+                </tr>
+                <tr>
+                    <td>Tibet</td>
+                    <td>TIB</td>
+                </tr>
+                <tr>
+                    <td>Wales</td>
+                    <td>WAL</td>
+                </tr>
+                <tr>
+                    <td>Australian Antarctic Claim</td>
+                    <td>ATAAUS</td>
+                </tr>
+                <tr>
+                    <td>Argentinian Antarctic Claim</td>
+                    <td>ATAARG</td>
+                </tr>
+                <tr>
+                    <td>Chilean Antarctic Claim</td>
+                    <td>ATACHL</td>
+                </tr>
+                <tr>
+                    <td>French Antarctic Claim</td>
+                    <td>ATAFRA</td>
+                </tr>
+                <tr>
+                    <td>New Zealands Antarctic Claim</td>
+                    <td>ATANZL</td>
+                </tr>
+                <tr>
+                    <td>Norwegian Antarctic Claim</td>
+                    <td>ATANOR</td>
+                </tr>
+                <tr>
+                    <td>British Antarctic Claim</td>
+                    <td>ATAGBR</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>If you feel there are any others missing or you would like something added, <a href="https://github.com/MeanBoyCousin/global-colors-api/issues" target="_blank">please raise an issue over on GitHub.</a></p>
+
 </body>
 
 </html>

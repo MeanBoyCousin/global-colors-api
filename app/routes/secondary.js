@@ -36,12 +36,13 @@ router.get('/', (req, res) => {
                     hsl: (row.secondaryHSL !== undefined && row.secondaryHSL !== '') ?
                         nbw(req, row.secondaryHSL.split('/'), 'hsl(0,0%,0%)', 'hsl(0,0%,100%)') : undefined,
                     css: (row.secondaryCSS !== undefined && row.secondaryCSS !== '') ?
-                        nbw(req, row.secondaryCSS.split('/'), 'black', 'white') : undefined
+                        nbw(req, row.secondaryCSS.split('/'), 'black', 'white') : undefined,
+                    notes: row.secondaryNotes
                 }
             }
 
             // If no secondary data, delete the country.
-            if (Object.values(result[row.continent].countries[row.country].secondary).join('') === '') delete result[row.continent].countries[row.country]
+            if (Object.values(result[row.continent].countries[row.country].secondary).join('') === '' || Object.values(result[row.continent].countries[row.country].secondary).slice(0, 4).join('') === '') delete result[row.continent].countries[row.country]
         })
 
         res.json(result)
