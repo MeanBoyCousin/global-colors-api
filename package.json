@@ -43,7 +43,7 @@
     "description": "An API to access associated color schemes from countries around the world.",
     "main": "ccapi.js",
     "scripts": {
-        "test": "",
+        "test": "newman run app/tests/global-colors-api.postman_collection",
         "start": "nodemon app/gcapi.js",
         "build": "gulp"
     },

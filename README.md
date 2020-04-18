@@ -1,5 +1,15 @@
 # Global Colors API
 
+- [API Endpoints](#api-endpoints)
+    - [All Endpoint](#all-endpoint)
+    - [Secondary Endpoint](#secondary-endpoint)
+    - [Continents Endpoint](#continents-endpoint)
+    - [Countries Endpoint](#countries-endpoint)
+- [References](#references)
+- [A word on data structure and access](#a-word-on-data-structure-and-access)
+- [Authors](#authors)
+- [License](#license)
+
 ## API Reference
 All endpoints are located at `http://localhost:3000/api/v1/`
 
@@ -191,6 +201,53 @@ GET /v1/USA?nbw&types=hex
 |British Antarctic Claim|ATAGBR|
 
 If you feel there are any others missing or you would like something added, [please raise an issue.](https://github.com/MeanBoyCousin/global-colors-api/issues).
+#
+
+## A word on data structure and access
+The data in the JSON responses from this API is mostly built using objects, even when data appears in a *list-like* format. The reason for this is rooted in data access.
+
+Consider the following request and response.
+```http
+GET /v1/all?colors=yellow&continents=OC&nbw&types=hex&set=secondary
+```
+```js
+{
+    "Oceania": {
+        "continentName": "Oceania",
+        "continentCode": "OC",
+        "countries": {
+            "Cook Islands": {
+                "countryName": "Cook Islands",
+                "countryCode": "COK",
+                "secondary": {
+                    "hex": [ "#005a00", "#ffd700" ],
+                    "notes": "Colors from the previous flag."
+                }
+            },
+            "Tuvalu": {
+                "countryName": "Tuvalu",
+                "countryCode": "TUV",
+                "secondary": {
+                    "hex": [ "#00247d", "#fee014" ],
+                    "notes": "Colors used in the flag of the Govenor-General of Tuvalu."
+                }
+            }
+        }
+    }
+}
+```
+If you wanted to access the secondary hex color data for The Cook Islands, the easiest way would be:
+```js
+const data = res.json()
+data.Oceania.countries['Cook Islands'].secondary.hex    // [ "#00247d", "#fee014" ]
+```
+However, if you wanted to access the secondary hex colors for each result, you would need to iterate through all of the data. In some cases, this could be alot larger than the simple example above. This is easily done with:
+```js
+const data = res.json()
+const hexColors = Object.values(data.Oceania.countries).map(country => country.secondary.hex)    // [ [ '#005a00', '#ffd700' ], [ '#00247d', '#fee014' ] ]
+```
+As you can see, with the data set up this way you get the best of both worlds in terms of data access and iteration.
+#
 
 ## Authors
 Tim Dunphy

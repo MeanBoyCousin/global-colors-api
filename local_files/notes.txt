@@ -10,8 +10,9 @@
 
 Stack
 
-    Postman / Newman ❌
+    Postman / Newman ✔️
     Travis CI ❌
+    Hosting ❌
     Gulp ✔️
     browserslist (for css) ✔️
     Node backend ✔️
@@ -19,14 +20,14 @@ Stack
     eslint ✔️
     dotenv for DB location ✔️
 
-Additional Countries w/ No Code (* in docs)
+Additional Countries w/ No Code (* in docs)  ✔️
 
-    England - ENG
-    Northern Ireland - NIR
-    Scotland - SCO
-    Tibet - TIB
-    Wales - WAL
-    Antarctica codes
+    England - ENG ✔️
+    Northern Ireland - NIR ✔️
+    Scotland - SCO ✔️
+    Tibet - TIB ✔️
+    Wales - WAL ✔️
+    Antarctica codes ✔️
 
 EJS
 
@@ -36,5 +37,3 @@ EJS
 README
 
     Explain structure to show how to access a specific country or how to loop through them via Object.values(). Allows best of both worlds.
-    
-    Countries doesn't have the colors query as no need to query for color sets in only one data set.
