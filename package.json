@@ -22,11 +22,15 @@
                 "error",
                 4
             ],
-            "operator-linebreak": ["error", "after", {
-                "overrides": {
-                    ":": "before"
+            "operator-linebreak": [
+                "error",
+                "after",
+                {
+                    "overrides": {
+                        ":": "before"
+                    }
                 }
-            }]
+            ]
         }
     },
     "browserslist": [
@@ -44,7 +48,8 @@
     "main": "ccapi.js",
     "scripts": {
         "test": "newman run app/tests/global-colors-api.postman_collection",
-        "start": "nodemon app/gcapi.js",
+        "start": "node app/gcapi.js",
+        "prod-start": "nodemon app/gcapi.js",
         "build": "gulp"
     },
     "repository": {

@@ -35,5 +35,5 @@ app.get('*', (req, res) => {
     res.render('404.ejs')
 })
 
-app.listen(3000)
+app.listen(process.env.port || 3000)
 console.log('http://localhost:3000/api/v1/all?prettify')
