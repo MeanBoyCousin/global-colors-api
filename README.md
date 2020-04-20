@@ -1,4 +1,4 @@
-# Global Colors API
+# Global Colors API [![Build Status](https://travis-ci.org/MeanBoyCousin/global-colors-api.svg?branch=master)](https://travis-ci.org/MeanBoyCousin/global-colors-api)
 
 - [API Endpoints](#api-endpoints)
     - [All Endpoint](#all-endpoint)
@@ -11,7 +11,7 @@
 - [License](#license)
 
 ## API Reference
-All endpoints are located at `http://localhost:3000/api/v1/`
+All endpoints are located at `https://globalcolors.glitch.me/api/v1/`
 
 ## API Endpoints
 
