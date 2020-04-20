@@ -1,5 +1,6 @@
 # Global Colors API [![Build Status](https://travis-ci.org/MeanBoyCousin/global-colors-api.svg?branch=master)](https://travis-ci.org/MeanBoyCousin/global-colors-api)
 
+- [API Demo](https://globalcolors.glitch.me/demo)
 - [API Endpoints](#api-endpoints)
     - [All Endpoint](#all-endpoint)
     - [Secondary Endpoint](#secondary-endpoint)

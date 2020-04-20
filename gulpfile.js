@@ -53,7 +53,12 @@ gulp.task('styles', function () {
         .pipe(postcss([sort(sortTemplate), prefix()]))
         .pipe(gulp.dest('app/assets'))
 
-    return (index, fourZeroFour)
+    const demo = gulp.src('app/assets/demo.css')
+        .pipe(plumber())
+        .pipe(postcss([sort(sortTemplate), prefix()]))
+        .pipe(gulp.dest('app/assets'))
+
+    return (index, fourZeroFour, demo)
 })
 
 gulp.task('default', gulp.series('lint-self', 'lint', 'styles'))

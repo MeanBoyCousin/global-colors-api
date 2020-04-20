@@ -8,6 +8,7 @@ const all = require('./routes/all')
 const secondary = require('./routes/secondary')
 const continents = require('./routes/continents')
 const countries = require('./routes/countries')
+const demo = require('./routes/demo')
 
 // Middleware.
 const timeout = require('connect-timeout')
@@ -31,6 +32,7 @@ app.use('/api/v1/all', all)
 app.use('/api/v1/secondary', secondary)
 app.use('/api/v1/', continents)
 app.use('/api/v1/', countries)
+app.use('/demo', demo)
 
 app.get('*', (req, res) => {
     app.use(express.static(path.join(__dirname, '/../assets')))
