@@ -1,12 +1,14 @@
 const express = require('express')
 const path = require('path')
 require('dotenv').config()
+
 // Routes.
 const index = require('./routes/index')
 const all = require('./routes/all')
 const secondary = require('./routes/secondary')
 const continents = require('./routes/continents')
 const countries = require('./routes/countries')
+
 // Middleware.
 const timeout = require('connect-timeout')
 const pretty = require('express-prettify')
